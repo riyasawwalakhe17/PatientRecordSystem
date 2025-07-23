@@ -1,15 +1,19 @@
 package com.practise.Entity;
 
 import java.util.Date;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "patient_details")
+@Table(name = "patients")
 public class Patients {
 
 	@Id
@@ -23,6 +27,11 @@ public class Patients {
 	private String disease;
 	
 	private String admittedDate;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "bill_id")
+	private List<Bill> bill;
+	
 
 	public int getId() {
 		return id;
@@ -64,12 +73,24 @@ public class Patients {
 		this.admittedDate = admittedDate;
 	}
 
+	
+	public List<Bill> getBill() {
+		return bill;
+	}
+
+	public void setBill(List<Bill> bill) {
+		this.bill = bill;
+	}
+
 	@Override
 	public String toString() {
 		return "Patients [id=" + id + ", name=" + name + ", age=" + age + ", disease=" + disease + ", admittedDate="
 				+ admittedDate + "]";
 	}
 
+	
+
+	
 	
 	
 }

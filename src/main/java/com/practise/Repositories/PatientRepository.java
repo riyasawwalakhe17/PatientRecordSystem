@@ -23,11 +23,12 @@ public class PatientRepository {
 		System.out.print("Enter Disease: ");
 		String disease = sc.nextLine();
 
+		System.out.print("Enter Admitted date: ");
+		String date = sc.nextLine();
+		
 		System.out.print("Enter Patient Age: ");
 		int age = sc.nextInt();
 
-		System.out.print("Enter Admitted date: ");
-		String date = sc.nextLine();
 
 		sc.nextLine(); // again, consume newline
 
