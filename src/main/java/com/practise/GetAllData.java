@@ -18,6 +18,7 @@ public class GetAllData {
 
 		List<Patients> patientList = session.createQuery("select p FROM Patients p", Patients.class).getResultList();
 
+		System.out.println("List of patients: ");
 		patientList.stream().forEach(k -> System.out.println(k.toString()));
 
 		transaction.commit();
