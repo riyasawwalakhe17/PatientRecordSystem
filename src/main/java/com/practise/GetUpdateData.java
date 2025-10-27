@@ -38,6 +38,7 @@ public class GetUpdateData {
 		patients.setAdmittedDate("2025-07-01");
 		patients.setBill(billList);
 		
+		System.out.println("Data updated successfully");
 		session.persist(patients);
 		transaction.commit();
 		session.close();
