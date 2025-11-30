@@ -43,7 +43,7 @@ public class SavingData {
 		patient.setAdmittedDate("2025-07-01");
 		patient.setBill(billList);
 
-		System.out.println("Data saved sucessfully");
+		System.out.println("Patient Data saved sucessfully");
 		session.persist(patient);
 		transaction.commit();
 		session.close();
