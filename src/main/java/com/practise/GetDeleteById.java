@@ -17,7 +17,7 @@ public class GetDeleteById {
 		Patients patients = session.find(Patients.class, 2);
 		session.remove(patients);
 
-		System.out.println("Data deleted successfully");
+		System.out.println("Patient Data deleted successfully");
 		transaction.commit();
 		session.close();
 	}
